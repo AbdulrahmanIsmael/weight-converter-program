@@ -1,5 +1,13 @@
 #include <stdio.h>
 
+void convertWeight(float weight)
+{
+    printf("Enter weight in Kilograms: ");
+    scanf("%f", &weight);
+    weight *= 2.20462;
+    printf("Weight in Pounds: %.3f\n", weight);
+}
+
 int main()
 {
     int choice = 1;
@@ -17,25 +25,19 @@ int main()
     switch (choice)
     {
     case 1:
-        printf("Enter weight in Kilograms: ");
-        scanf("%f", &weight);
-        weight *= 2.20462;
-        printf("Weight in Pounds: %.3f\n", weight);
+        convertWeight(weight);
         break;
     case 2:
-        printf("Enter weight in Pounds: ");
-        scanf("%f", &weight);
-        weight /= 2.20462;
-        printf("Weight in Kilograms: %.3f\n", weight);
+        convertWeight(weight);
         break;
     default:
         printf("Invalid choice\n\n");
     }
 
     printf("Thank you, Write (0) to exit the program or any other number to try new value: ");
-    int command = 0;
-    scanf("%d", &command);
-    switch (command)
+    int choice = 0;
+    scanf("%d", &choice);
+    switch (choice)
     {
     case 0:
         printf("Exiting the program.\n");
